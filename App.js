@@ -22,24 +22,39 @@ const App = () => {
   const [data, setData] = React.useState({
     username: "",
     password: "",
-    check_textInputChange: false,
-    secureTextEntry: true,
-    isValidUser: true,
-    isValidPassword: true,
+    passwordConfirmation: "",
+    passwordsecureTextEntry: true,
+    passwordConfirmationsecureTextEntry: true,
   });
 
   const handlePasswordChange = (val) => {
-    if (data.secureTextEntry == true) {
+    if (data.passwordsecureTextEntry == true) {
       setData({
         ...data,
         password: val,
-        secureTextEntry: false,
+        passwordsecureTextEntry: false,
       });
     } else {
       setData({
         ...data,
         password: val,
-        secureTextEntry: true,
+        passwordsecureTextEntry: true,
+      });
+    }
+  };
+
+  const handleConfirmationPasswordChange = (val) => {
+    if (data.passwordConfirmationsecureTextEntry == true) {
+      setData({
+        ...data,
+        password: val,
+        passwordConfirmationsecureTextEntry: false,
+      });
+    } else {
+      setData({
+        ...data,
+        password: val,
+        passwordConfirmationsecureTextEntry: true,
       });
     }
   };
@@ -65,7 +80,7 @@ const App = () => {
           <TextInput
             placeholder="Password"
             style={styles.input}
-            secureTextEntry={data.secureTextEntry}
+            secureTextEntry={data.passwordsecureTextEntry}
           />
           <TouchableOpacity onPress={handlePasswordChange}>
             <BiLowVision
@@ -82,9 +97,9 @@ const App = () => {
           <TextInput
             placeholder="Confirm Password"
             style={styles.input}
-            secureTextEntry={data.secureTextEntry}
+            secureTextEntry={data.passwordConfirmationsecureTextEntry}
           />
-          <TouchableOpacity onPress={handlePasswordChange}>
+          <TouchableOpacity onPress={handleConfirmationPasswordChange}>
             <BiLowVision
               style={styles.icon}
               onChangeText={(val) => textInputChange(val)}
