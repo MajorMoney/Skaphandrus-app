@@ -155,7 +155,7 @@ const styles = StyleSheet.create({
     //backgroundColor:'black',
     marginTop: 50,
     width: 200,
-    height: 200,
+    height: 220,
     alignItems: "top",
     justifyContent: "top",
   },

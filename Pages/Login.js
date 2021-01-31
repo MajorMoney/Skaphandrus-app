@@ -118,7 +118,7 @@ const styles = StyleSheet.create({
   logo: {
     //backgroundColor:'black',
     width: 200,
-    height: 200,
+    height: 220,
     alignItems: "top",
     justifyContent: "top",
   },
