@@ -72,7 +72,7 @@ const Login = ({ navigation }) => {
         <View style={styles.btnContainer}>
           <TouchableOpacity
             style={styles.btn}
-            onPress={() => console.log("Login")}
+            onPress={() => navigation.navigate("MainMenu")}
           >
             <Text style={styles.btnText}>Login</Text>
           </TouchableOpacity>
