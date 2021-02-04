@@ -11,8 +11,8 @@ export default function App() {
   return (
     <NavigationContainer>
       <Drawer.Navigator initialRouteName="Login">
-        <Drawer.Screen name="Login" component={ScreenLogin} />
-        <Drawer.Screen name="Register" component={ScreenRegister} />
+        <Drawer.Screen name="ScreenLogin" component={ScreenLogin} />
+        <Drawer.Screen name="ScreenRegister" component={ScreenRegister} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
