@@ -1,19 +1,20 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
+import { createStackNavigator } from "@react-navigation/stack";
 
 import ScreenLogin from "./Pages/Login";
 import ScreenRegister from "./Pages/Register";
 
-const Drawer = createDrawerNavigator();
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Drawer.Navigator initialRouteName="Login">
-        <Drawer.Screen name="Login" component={ScreenLogin} />
-        <Drawer.Screen name="Register" component={ScreenRegister} />
-      </Drawer.Navigator>
+      <Stack.Navigator initialRouteName="Login">
+        <Stack.Screen name="Login" component={ScreenLogin} />
+        <Stack.Screen name="Register" component={ScreenRegister} />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 }
