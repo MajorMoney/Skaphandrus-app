@@ -123,9 +123,9 @@ const styles = StyleSheet.create({
   logo: {
     //backgroundColor:'black',
     width: 200,
-    height: 220,
-    alignItems: "flex-start",
-    justifyContent: "flex-start",
+    height: 200,
+    alignItems: "top",
+    justifyContent: "top",
   },
   logContainer: {
     width: "80%",
