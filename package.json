@@ -8,8 +8,14 @@
     "eject": "expo eject"
   },
   "dependencies": {
-    "@react-navigation/native": "^5.9.2",
-    "expo": "~40.0.0",
+
+    "@react-native-community/masked-view": "^0.1.6",
+    "@react-navigation/drawer": "^5.0.1",
+    "@react-navigation/material-bottom-tabs": "^5.0.3",
+    "@react-navigation/material-top-tabs": "^5.0.1",
+    "@react-navigation/native": "^5.0.1",
+    "@react-navigation/stack": "^5.0.1",
+    "expo": "^40.0.1",
     "expo-status-bar": "~1.0.3",
     "react": "16.13.1",
     "react-dom": "16.13.1",
