@@ -78,7 +78,7 @@ const ScreenLogin = ({ navigation }) => {
         <View style={styles.btnContainer}>
           <TouchableOpacity
             style={styles.btn}
-            onPress={() => navigation.navigate("MainMenu")}
+            onPress={() => console.log("Login")}
           >
             <MyAppText style={styles.btnText}>Login</MyAppText>
           </TouchableOpacity>
