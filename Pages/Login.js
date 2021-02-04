@@ -12,7 +12,7 @@ import gradient from "../assets/gradientv2.png";
 import { BiLockOpenAlt, BiUserCircle, BiLowVision } from "react-icons/bi";
 import logo from "../assets/logo_skaphandrus.png";
 
-function ScreenLogin({ navigation }) {
+const ScreenLogin = ({ navigation }) => {
   const [data, setData] = React.useState({
     username: "",
     password: "",
@@ -36,6 +36,8 @@ function ScreenLogin({ navigation }) {
       });
     }
   };
+
+  console.log(navigation);
   return (
     <View style={styles.container}>
       <ImageBackground source={gradient} style={styles.image}>
@@ -94,7 +96,7 @@ function ScreenLogin({ navigation }) {
       </ImageBackground>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
