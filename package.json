@@ -10,6 +10,7 @@
   "dependencies": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     "@react-native-community/masked-view": "^0.1.6",
     "@react-navigation/drawer": "^5.0.1",
@@ -18,6 +19,8 @@
     "@react-navigation/native": "^5.0.1",
     "@react-navigation/stack": "^5.0.1",
 >>>>>>> parent of 7958db0... Main Menu
+=======
+>>>>>>> parent of a116f7f... Main menu
 =======
 >>>>>>> parent of a116f7f... Main menu
     "expo": "~40.0.0",
