@@ -2,11 +2,11 @@ import { StatusBar } from "expo-status-bar";
 import React from "react";
 import {
   StyleSheet,
-  Text,
   View,
   TextInput,
   TouchableOpacity,
   ImageBackground,
+  MyAppText,
   Image,
 } from "react-native";
 import gradient from "../assets/gradientv2.png";

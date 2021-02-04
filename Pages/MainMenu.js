@@ -1,10 +1,9 @@
 import React from "react";
 import {
   StyleSheet,
-  Text,
   View,
-  TextInput,
   TouchableOpacity,
+  MyAppText,
   ImageBackground,
   Image,
 } from "react-native";
@@ -16,26 +15,26 @@ const MainMenu = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <ImageBackground source={gradient} style={styles.image}>
-        <Text style={styles.title}>Skaphandrus</Text>
+        <MyAppText style={styles.title}>Skaphandrus</MyAppText>
 
         <Image style={styles.logo} source={logo} />
         <TouchableOpacity
           style={styles.btn}
           onPress={() => console.log("Game 1")}
         >
-          <Text style={styles.btnText}>Game 1</Text>
+          <MyAppText style={styles.btnText}>Game 1</MyAppText>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.btn}
           onPress={() => console.log("Game 2")}
         >
-          <Text style={styles.btnText}>Game 2</Text>
+          <MyAppText style={styles.btnText}>Game 2</MyAppText>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.Logout}
           onPress={() => navigation.navigate("Login")}
         >
-          <Text style={styles.btnText}>Logout</Text>
+          <MyAppText style={styles.btnText}>Logout</MyAppText>
         </TouchableOpacity>
       </ImageBackground>
     </View>
