@@ -41,7 +41,7 @@ const ScreenLogin = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <ImageBackground source={gradient} style={styles.image}>
-        <Text style={styles.title}>Skaphandrus</Text>
+        <MyAppText style={styles.title}>Skaphandrus</MyAppText>
 
         <Image style={styles.logo} source={logo} />
 
@@ -79,19 +79,19 @@ const ScreenLogin = ({ navigation }) => {
             style={styles.btn}
             onPress={() => console.log("Login")}
           >
-            <Text style={styles.btnText}>Login</Text>
+            <MyAppText style={styles.btnText}>Login</MyAppText>
           </TouchableOpacity>
 
-          <Text>Forgot your password?</Text>
+          <MyAppText>Forgot your password?</MyAppText>
 
           <TouchableOpacity
             style={styles.btn}
             onPress={() => navigation.navigate("Register")}
           >
-            <Text style={styles.btnText}>Register</Text>
+            <MyAppText style={styles.btnText}>Register</MyAppText>
           </TouchableOpacity>
 
-          <Text>Don't have an account? SingIn</Text>
+          <MyAppText>Don't have an account? SingIn</MyAppText>
         </View>
       </ImageBackground>
     </View>
@@ -123,9 +123,9 @@ const styles = StyleSheet.create({
   logo: {
     //backgroundColor:'black',
     width: 200,
-    height: 200,
-    alignItems: "top",
-    justifyContent: "top",
+    height: 220,
+    alignItems: "flex-start",
+    justifyContent: "flex-start",
   },
   logContainer: {
     width: "80%",
