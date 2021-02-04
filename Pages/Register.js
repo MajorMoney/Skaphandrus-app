@@ -18,7 +18,7 @@ import {
 } from "react-icons/bi";
 import logo from "../assets/logo_skaphandrus.png";
 
-const ScreenRegister = ({ navigation }) => {
+function ScreenRegister({ navigation }) {
   const [data, setData] = React.useState({
     username: "",
     password: "",
@@ -137,7 +137,7 @@ const ScreenRegister = ({ navigation }) => {
       </ImageBackground>
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
