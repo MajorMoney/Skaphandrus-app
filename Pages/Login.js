@@ -3,6 +3,7 @@ import {
   StyleSheet,
   Text,
   View,
+  MyAppText,
   TextInput,
   TouchableOpacity,
   ImageBackground,
@@ -12,7 +13,7 @@ import gradient from "../assets/gradientv2.png";
 import { BiLockOpenAlt, BiUserCircle, BiLowVision } from "react-icons/bi";
 import logo from "../assets/logo_skaphandrus.png";
 
-const Login = ({ navigation }) => {
+function ScreenLogin({ navigation }) {
   const [data, setData] = React.useState({
     username: "",
     password: "",
@@ -36,12 +37,10 @@ const Login = ({ navigation }) => {
       });
     }
   };
-
-  console.log(navigation);
   return (
     <View style={styles.container}>
       <ImageBackground source={gradient} style={styles.image}>
-        <Text style={styles.title}>Skaphandrus</Text>
+        <MyAppText style={styles.title}>Skaphandrus</MyAppText>
 
         <Image style={styles.logo} source={logo} />
 
@@ -49,7 +48,11 @@ const Login = ({ navigation }) => {
           <View style={styles.iconContainer}>
             <BiUserCircle style={styles.icon} />
           </View>
-          <TextInput placeholder="Username" style={styles.input} />
+          <TextInput
+            placeholder="Username"
+            placeholderTextColor="#fff"
+            style={styles.input}
+          />
         </View>
 
         <View style={styles.logContainer}>
@@ -58,6 +61,7 @@ const Login = ({ navigation }) => {
           </View>
           <TextInput
             placeholder="Password"
+            placeholderTextColor="#fff"
             style={styles.input}
             secureTextEntry={data.passwordsecureTextEntry}
           />
@@ -74,24 +78,24 @@ const Login = ({ navigation }) => {
             style={styles.btn}
             onPress={() => navigation.navigate("MainMenu")}
           >
-            <Text style={styles.btnText}>Login</Text>
+            <MyAppText style={styles.btnText}>Login</MyAppText>
           </TouchableOpacity>
 
-          <Text>Forgot your password?</Text>
+          <MyAppText>Forgot your password?</MyAppText>
 
           <TouchableOpacity
             style={styles.btn}
             onPress={() => navigation.navigate("Register")}
           >
-            <Text style={styles.btnText}>Register</Text>
+            <MyAppText style={styles.btnText}>Register</MyAppText>
           </TouchableOpacity>
 
-          <Text>Don't have an account? SingIn</Text>
+          <MyAppText>Don't have an account? SingIn</MyAppText>
         </View>
       </ImageBackground>
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -119,8 +123,8 @@ const styles = StyleSheet.create({
     //backgroundColor:'black',
     width: 200,
     height: 220,
-    alignItems: "top",
-    justifyContent: "top",
+    alignItems: "flex-start",
+    justifyContent: "flex-start",
   },
   logContainer: {
     width: "80%",
@@ -139,7 +143,6 @@ const styles = StyleSheet.create({
     borderBottomWidth: 2,
     width: "100%",
     padding: 10,
-    placeholderTextColor: "#fff",
     textShadowColor: "#fff",
   },
   btnContainer: {
@@ -147,7 +150,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   btn: {
-    backgroundColor: "" /* Green */,
+    //backgroundColor: "" /* Green */,
     borderColor: "white",
     borderRadius: 10,
     paddingVertical: 5,
@@ -164,4 +167,4 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
 });
-export default Login;
+export default ScreenLogin;

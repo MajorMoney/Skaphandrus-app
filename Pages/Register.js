@@ -18,7 +18,7 @@ import {
 } from "react-icons/bi";
 import logo from "../assets/logo_skaphandrus.png";
 
-const Register = ({ navigation }) => {
+function ScreenRegister({ navigation }) {
   const [data, setData] = React.useState({
     username: "",
     password: "",
@@ -62,7 +62,7 @@ const Register = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <ImageBackground source={gradient} style={styles.image}>
-        <Text style={styles.title}>Skaphandrus</Text>
+        <MyAppText style={styles.title}>Skaphandrus</MyAppText>
 
         <Image style={styles.logo} source={logo} />
 
@@ -70,7 +70,11 @@ const Register = ({ navigation }) => {
           <View style={styles.iconContainer}>
             <BiUserCircle style={styles.icon} />
           </View>
-          <TextInput placeholder="Username" style={styles.input} />
+          <TextInput
+            placeholder="Username"
+            placeholderTextColor="#fff"
+            style={styles.input}
+          />
         </View>
 
         <View style={styles.logContainer}>
@@ -79,6 +83,7 @@ const Register = ({ navigation }) => {
           </View>
           <TextInput
             placeholder="Password"
+            placeholderTextColor="#fff"
             style={styles.input}
             secureTextEntry={data.passwordsecureTextEntry}
           />
@@ -96,6 +101,7 @@ const Register = ({ navigation }) => {
           </View>
           <TextInput
             placeholder="Confirm Password"
+            placeholderTextColor="#fff"
             style={styles.input}
             secureTextEntry={data.passwordConfirmationsecureTextEntry}
           />
@@ -111,7 +117,11 @@ const Register = ({ navigation }) => {
           <View style={styles.iconContainer}>
             <BiMobileAlt style={styles.icon} />
           </View>
-          <TextInput placeholder="Email" style={styles.input} />
+          <TextInput
+            placeholder="Email"
+            placeholderTextColor="#fff"
+            style={styles.input}
+          />
         </View>
 
         <View style={styles.btnContainer}>
@@ -119,15 +129,15 @@ const Register = ({ navigation }) => {
             style={styles.btn}
             onPress={() => navigation.navigate("Login")}
           >
-            <Text style={styles.btnText}>Register</Text>
+            <MyAppText style={styles.btnText}>Register</MyAppText>
           </TouchableOpacity>
 
-          <Text>Don't have an account? SingIn</Text>
+          <MyAppText>Don't have an account? SingIn</MyAppText>
         </View>
       </ImageBackground>
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -156,8 +166,8 @@ const styles = StyleSheet.create({
     marginTop: 50,
     width: 200,
     height: 220,
-    alignItems: "top",
-    justifyContent: "top",
+    alignItems: "flex-start",
+    justifyContent: "flex-start",
   },
   logContainer: {
     width: "80%",
@@ -176,7 +186,6 @@ const styles = StyleSheet.create({
     borderBottomWidth: 2,
     width: "100%",
     padding: 10,
-    placeholderTextColor: "#fff",
     textShadowColor: "#fff",
   },
   btnContainer: {
@@ -184,7 +193,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   btn: {
-    backgroundColor: "" /* Green */,
+    //backgroundColor: "" /* Green */,
     borderColor: "white",
     borderRadius: 10,
     paddingVertical: 5,
@@ -201,4 +210,4 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
 });
-export default Register;
+export default ScreenRegister;
