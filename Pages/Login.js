@@ -124,9 +124,15 @@ const styles = StyleSheet.create({
   logo: {
     //backgroundColor:'black',
     width: 200,
+<<<<<<< HEAD
     height: 220,
     alignItems: "flex-start",
     justifyContent: "flex-start",
+=======
+    height: 200,
+    alignItems: "top",
+    justifyContent: "top",
+>>>>>>> parent of 1819111... Logog done
   },
   logContainer: {
     width: "80%",
