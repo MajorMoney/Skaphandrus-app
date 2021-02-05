@@ -3,7 +3,6 @@ import {
   StyleSheet,
   Text,
   View,
-  MyAppText,
   TextInput,
   TouchableOpacity,
   ImageBackground,
@@ -42,7 +41,7 @@ const ScreenLogin = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <ImageBackground source={gradient} style={styles.image}>
-        <MyAppText style={styles.title}>Skaphandrus</MyAppText>
+        <Text style={styles.title}>Skaphandrus</Text>
 
         <Image style={styles.logo} source={logo} />
 
@@ -80,19 +79,19 @@ const ScreenLogin = ({ navigation }) => {
             style={styles.btn}
             onPress={() => navigation.navigate("MainMenu")}
           >
-            <MyAppText style={styles.btnText}>Login</MyAppText>
+            <Text style={styles.btnText}>Login</Text>
           </TouchableOpacity>
 
-          <MyAppText>Forgot your password?</MyAppText>
+          <Text>Forgot your password?</Text>
 
           <TouchableOpacity
             style={styles.btn}
             onPress={() => navigation.navigate("Register")}
           >
-            <MyAppText style={styles.btnText}>Register</MyAppText>
+            <Text style={styles.btnText}>Register</Text>
           </TouchableOpacity>
 
-          <MyAppText>Don't have an account? SingIn</MyAppText>
+          <Text>Don't have an account? SingIn</Text>
         </View>
       </ImageBackground>
     </View>
