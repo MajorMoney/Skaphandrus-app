@@ -11,10 +11,12 @@ import {
   Dimensions,
 } from "react-native";
 
+//const height = Dimensions.get("window").height;
+
 const MapScreen = ({ navigation }) => {
   return (
     <MapView
-      //customMapStyle={styles.map}
+      style={styles.map}
       provider="google"
       region={{
         latitude: 37.78825,
