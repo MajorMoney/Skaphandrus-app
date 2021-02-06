@@ -19,7 +19,7 @@ const MainMenu = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <ImageBackground
-        source={require("../assets/FundoMar.jpg")}
+        source={require("../assets/aaa.jpg")}
         style={styles.image}
       >
         <TouchableOpacity
@@ -37,7 +37,7 @@ const MainMenu = ({ navigation }) => {
           onPress={() => navigation.navigate("MapScreen")}
         >
           <FontAwesomeIcon icon={faGamepad} color="white" size={50} />
-          <Text style={styles.btnText}>Game(MAP)</Text>
+          <Text style={styles.btnText}>Game</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
@@ -128,8 +128,8 @@ const styles = StyleSheet.create({
     borderColor: "white",
     borderRadius: 100,
     borderWidth: 3,
-    width: "50%",
-    height: 100,
+    width: 120,
+    height: 120,
     marginTop: 50,
     textAlign: "center",
     justifyContent: "center",
@@ -147,7 +147,7 @@ const styles = StyleSheet.create({
     borderColor: "white",
     borderRadius: 100,
     borderWidth: 3,
-    width: "15%",
+    width: 50,
     height: 50,
     marginTop: 50,
     textAlign: "center",
