@@ -159,7 +159,7 @@ const styles = StyleSheet.create({
     width: "80%",
     alignItems: "center",
     flexDirection: "row",
-    justifyContent: "center",
+    justifyContent: "space-around",
     margin: 10,
     minHeight: 50,
   },
@@ -177,6 +177,7 @@ const styles = StyleSheet.create({
   btnContainer: {
     width: "80%",
     alignItems: "center",
+    justifyContent: "space-around",
   },
   btn: {
     //backgroundColor: "" /* Green */,

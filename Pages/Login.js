@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
     width: "80%",
     alignItems: "center",
     flexDirection: "row",
-    justifyContent: "center",
+    justifyContent: "space-around",
     margin: 10,
     minHeight: 50,
   },
