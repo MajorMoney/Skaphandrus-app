@@ -51,7 +51,7 @@ const ScreenLogin = ({ navigation }) => {
             <FontAwesomeIcon icon={faUser} color="white" />
           </View>
           <TextInput
-            placeholder="Username"
+            placeholder=" Username"
             placeholderTextColor="#fff"
             style={styles.input}
           />
@@ -62,7 +62,7 @@ const ScreenLogin = ({ navigation }) => {
             <FontAwesomeIcon icon={faLock} color="white" />
           </View>
           <TextInput
-            placeholder="Password"
+            placeholder="  Password"
             placeholderTextColor="#fff"
             style={styles.input}
             secureTextEntry={data.passwordsecureTextEntry}
@@ -88,8 +88,6 @@ const ScreenLogin = ({ navigation }) => {
           >
             <Text style={styles.btnText}>Register</Text>
           </TouchableOpacity>
-
-          <Text>Don't have an account?</Text>
         </View>
       </ImageBackground>
     </View>

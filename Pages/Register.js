@@ -66,7 +66,7 @@ const ScreenRegister = ({ navigation }) => {
             <FontAwesomeIcon icon={faUser} color="white" />
           </View>
           <TextInput
-            placeholder="Username"
+            placeholder=" Username"
             placeholderTextColor="#fff"
             style={styles.input}
           />
@@ -77,7 +77,7 @@ const ScreenRegister = ({ navigation }) => {
             <FontAwesomeIcon icon={faLock} color="white" />
           </View>
           <TextInput
-            placeholder="Password"
+            placeholder="  Password"
             placeholderTextColor="#fff"
             style={styles.input}
             secureTextEntry={data.passwordsecureTextEntry}
@@ -92,7 +92,7 @@ const ScreenRegister = ({ navigation }) => {
             <FontAwesomeIcon icon={faLock} color="white" />
           </View>
           <TextInput
-            placeholder="Confirm Password"
+            placeholder="  Confirm Password"
             placeholderTextColor="#fff"
             style={styles.input}
             secureTextEntry={data.passwordConfirmationsecureTextEntry}
@@ -107,7 +107,7 @@ const ScreenRegister = ({ navigation }) => {
             <FontAwesomeIcon icon={faAt} color="white" />
           </View>
           <TextInput
-            placeholder="Email"
+            placeholder="  Email"
             placeholderTextColor="#fff"
             style={styles.input}
           />
