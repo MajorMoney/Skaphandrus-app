@@ -120,8 +120,6 @@ const ScreenRegister = ({ navigation }) => {
           >
             <Text style={styles.btnText}>Register</Text>
           </TouchableOpacity>
-
-          <Text>Don't have an account? SingIn</Text>
         </View>
       </ImageBackground>
     </View>
@@ -147,7 +145,6 @@ const styles = StyleSheet.create({
     color: "#fff",
     position: "absolute",
     top: 10,
-    fontFamily: "New Times Roman",
     //fontWeight:'bold',
   },
   logo: {
