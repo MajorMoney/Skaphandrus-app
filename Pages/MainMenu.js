@@ -3,41 +3,69 @@ import {
   StyleSheet,
   Text,
   View,
-  TextInput,
   TouchableOpacity,
   ImageBackground,
-  Image,
 } from "react-native";
-import gradient from "../assets/gradientv2.png";
-import logo from "../assets/logo_skaphandrus.png";
+import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
+import {
+  faUser,
+  faGamepad,
+  faWater,
+  faCog,
+  faSignOutAlt,
+} from "@fortawesome/free-solid-svg-icons";
 
 const MainMenu = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <ImageBackground source={gradient} style={styles.image}>
-        <Text style={styles.title}>Skaphandrus</Text>
-
-        <Image style={styles.logo} source={logo} />
+      <ImageBackground
+        source={require("../assets/FundoMar.jpg")}
+        style={styles.image}
+      >
         <TouchableOpacity
           style={styles.btn}
           placeholderTextColor="#fff"
-          onPress={() => console.log("Game 1")}
+          onPress={() => console.log("Profile")}
         >
-          <Text style={styles.btnText}>Game 1</Text>
+          <FontAwesomeIcon icon={faUser} color="white" size={50} />
+          <Text style={styles.btnText}>Profile</Text>
         </TouchableOpacity>
+
         <TouchableOpacity
           style={styles.btn}
           placeholderTextColor="#fff"
           onPress={() => navigation.navigate("MapScreen")}
         >
-          <Text style={styles.btnText}>MAP</Text>
+          <FontAwesomeIcon icon={faGamepad} color="white" size={50} />
+          <Text style={styles.btnText}>Game(MAP)</Text>
         </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.btn}
+          placeholderTextColor="#fff"
+          onPress={() => console.log("Explore")}
+        >
+          <FontAwesomeIcon icon={faWater} color="white" size={50} />
+          <Text style={styles.btnText}>Explore</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.btn}
+          placeholderTextColor="#fff"
+          onPress={() => navigation.navigate("Login")}
+        >
+          <FontAwesomeIcon icon={faCog} color="white" size={50} />
+          <Text style={styles.btnText}>Setings</Text>
+        </TouchableOpacity>
+
         <TouchableOpacity
           style={styles.Logout}
           placeholderTextColor="#fff"
           onPress={() => navigation.navigate("Login")}
         >
-          <Text style={styles.btnText}>Logout</Text>
+          <FontAwesomeIcon icon={faSignOutAlt} color="white" size={10} />
+
+          <Text style={styles.btnTextLogout}>Logout</Text>
         </TouchableOpacity>
       </ImageBackground>
     </View>
@@ -98,16 +126,14 @@ const styles = StyleSheet.create({
   btn: {
     //backgroundColor: "" /* Green */,
     borderColor: "white",
-    borderRadius: 10,
-    paddingVertical: 10,
-    paddingHorizontal: 5,
+    borderRadius: 100,
     borderWidth: 3,
-    width: "80%",
+    width: "50%",
     height: 100,
-    minHeight: 30,
-    marginTop: 30,
+    marginTop: 50,
     textAlign: "center",
     justifyContent: "center",
+    alignItems: "center",
   },
   btnText: {
     color: "white",
@@ -119,14 +145,21 @@ const styles = StyleSheet.create({
   Logout: {
     //backgroundColor: "" /* Green */,
     borderColor: "white",
-    borderRadius: 10,
-    paddingVertical: 10,
+    borderRadius: 100,
     borderWidth: 3,
-    width: "80%",
-    height: 100,
-    minHeight: 30,
-    marginTop: 30,
+    width: "15%",
+    height: 50,
+    marginTop: 50,
+    textAlign: "center",
     justifyContent: "center",
+    alignItems: "center",
+  },
+  btnTextLogout: {
+    color: "white",
+    textAlign: "center",
+    justifyContent: "center",
+    fontSize: 10,
+    fontWeight: "bold",
   },
 });
 export default MainMenu;
