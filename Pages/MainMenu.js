@@ -9,7 +9,6 @@ import {
   Image,
 } from "react-native";
 import gradient from "../assets/gradientv2.png";
-import { BiLockOpenAlt, BiUserCircle, BiLowVision } from "react-icons/bi";
 import logo from "../assets/logo_skaphandrus.png";
 
 const MainMenu = ({ navigation }) => {
@@ -21,18 +20,21 @@ const MainMenu = ({ navigation }) => {
         <Image style={styles.logo} source={logo} />
         <TouchableOpacity
           style={styles.btn}
+          placeholderTextColor="#fff"
           onPress={() => console.log("Game 1")}
         >
           <Text style={styles.btnText}>Game 1</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.btn}
-          onPress={() => console.log("Game 2")}
+          placeholderTextColor="#fff"
+          onPress={() => navigation.navigate("MapScreen")}
         >
-          <Text style={styles.btnText}>Game 2</Text>
+          <Text style={styles.btnText}>MAP</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.Logout}
+          placeholderTextColor="#fff"
           onPress={() => navigation.navigate("Login")}
         >
           <Text style={styles.btnText}>Logout</Text>
@@ -68,8 +70,8 @@ const styles = StyleSheet.create({
     //backgroundColor:'black',
     width: 200,
     height: 220,
-    alignItems: "top",
-    justifyContent: "top",
+    alignItems: "center",
+    justifyContent: "center",
   },
   logContainer: {
     width: "80%",
@@ -88,7 +90,6 @@ const styles = StyleSheet.create({
     borderBottomWidth: 2,
     width: "100%",
     padding: 10,
-    placeholderTextColor: "#fff",
     textShadowColor: "#fff",
   },
   btnContainer: {
@@ -96,7 +97,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   btn: {
-    backgroundColor: "" /* Green */,
+    //backgroundColor: "" /* Green */,
     borderColor: "white",
     borderRadius: 10,
     paddingVertical: 10,
@@ -117,7 +118,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   Logout: {
-    backgroundColor: "" /* Green */,
+    //backgroundColor: "" /* Green */,
     borderColor: "white",
     borderRadius: 10,
     paddingVertical: 10,

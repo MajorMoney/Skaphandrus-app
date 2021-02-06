@@ -11,7 +11,7 @@ import {
   Dimensions,
 } from "react-native";
 
-const ScreenMap = ({ navigation }) => {
+const MapScreen = ({ navigation }) => {
   return (
     <MapView
       //customMapStyle={styles.map}

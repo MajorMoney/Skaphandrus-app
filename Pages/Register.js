@@ -9,12 +9,6 @@ import {
   Image,
 } from "react-native";
 import gradient from "../assets/gradientv2.png";
-import {
-  BiLockOpenAlt,
-  BiMobileAlt,
-  BiUserCircle,
-  BiLowVision,
-} from "react-icons/bi";
 import logo from "../assets/logo_skaphandrus.png";
 
 const ScreenRegister = ({ navigation }) => {
@@ -66,9 +60,7 @@ const ScreenRegister = ({ navigation }) => {
         <Image style={styles.logo} source={logo} />
 
         <View style={styles.logContainer}>
-          <View style={styles.iconContainer}>
-            <BiUserCircle style={styles.icon} />
-          </View>
+          <View style={styles.iconContainer}></View>
           <TextInput
             placeholder="Username"
             placeholderTextColor="#fff"
@@ -77,45 +69,31 @@ const ScreenRegister = ({ navigation }) => {
         </View>
 
         <View style={styles.logContainer}>
-          <View style={styles.iconContainer}>
-            <BiLockOpenAlt style={styles.icon} />
-          </View>
+          <View style={styles.iconContainer}></View>
           <TextInput
             placeholder="Password"
             placeholderTextColor="#fff"
             style={styles.input}
             secureTextEntry={data.passwordsecureTextEntry}
           />
-          <TouchableOpacity onPress={handlePasswordChange}>
-            <BiLowVision
-              style={styles.icon}
-              onChangeText={(val) => textInputChange(val)}
-            />
-          </TouchableOpacity>
+          <TouchableOpacity onPress={handlePasswordChange}></TouchableOpacity>
         </View>
 
         <View style={styles.logContainer}>
-          <View style={styles.iconContainer}>
-            <BiLockOpenAlt style={styles.icon} />
-          </View>
+          <View style={styles.iconContainer}></View>
           <TextInput
             placeholder="Confirm Password"
             placeholderTextColor="#fff"
             style={styles.input}
             secureTextEntry={data.passwordConfirmationsecureTextEntry}
           />
-          <TouchableOpacity onPress={handleConfirmationPasswordChange}>
-            <BiLowVision
-              style={styles.icon}
-              onChangeText={(val) => textInputChange(val)}
-            />
-          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={handleConfirmationPasswordChange}
+          ></TouchableOpacity>
         </View>
 
         <View style={styles.logContainer}>
-          <View style={styles.iconContainer}>
-            <BiMobileAlt style={styles.icon} />
-          </View>
+          <View style={styles.iconContainer}></View>
           <TextInput
             placeholder="Email"
             placeholderTextColor="#fff"
