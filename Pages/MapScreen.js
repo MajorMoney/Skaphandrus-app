@@ -10,21 +10,15 @@ import {
   Image,
   Dimensions,
 } from "react-native";
+import Map from "../components/Map";
 
 //const height = Dimensions.get("window").height;
 
 const MapScreen = ({ navigation }) => {
   return (
-    <MapView
-      style={styles.map}
-      provider="google"
-      region={{
-        latitude: 37.78825,
-        longitude: -122.4324,
-        latitudeDelta: 0.0922,
-        longitudeDelta: 0.0421,
-      }}
-    ></MapView>
+    <View>
+      <Map></Map>
+    </View>
   );
 };
 

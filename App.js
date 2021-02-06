@@ -9,15 +9,17 @@ import MapScreen from "./Pages/MapScreen";
 
 const Drawer = createDrawerNavigator();
 
-export default function App() {
-  return (
-    <NavigationContainer>
-      <Drawer.Navigator initialRouteName="Login">
-        <Drawer.Screen name="Login" component={ScreenLogin} />
-        <Drawer.Screen name="Register" component={ScreenRegister} />
-        <Drawer.Screen name="MainMenu" component={ScreenMainMenu} />
-        <Drawer.Screen name="MapScreen" component={MapScreen} />
-      </Drawer.Navigator>
-    </NavigationContainer>
-  );
+export default class App extends React.Component {
+  render() {
+    return (
+      <NavigationContainer>
+        <Drawer.Navigator initialRouteName="Login">
+          <Drawer.Screen name="Login" component={ScreenLogin} />
+          <Drawer.Screen name="Register" component={ScreenRegister} />
+          <Drawer.Screen name="MainMenu" component={ScreenMainMenu} />
+          <Drawer.Screen name="MapScreen" component={MapScreen} />
+        </Drawer.Navigator>
+      </NavigationContainer>
+    );
+  }
 }
