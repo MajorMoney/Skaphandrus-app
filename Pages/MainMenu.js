@@ -63,7 +63,6 @@ const styles = StyleSheet.create({
     color: "#fff",
     position: "absolute",
     top: 10,
-    fontFamily: "New Times Roman",
     //fontWeight:'bold',
   },
   logo: {
