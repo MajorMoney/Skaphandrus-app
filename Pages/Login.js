@@ -10,7 +10,12 @@ import {
 } from "react-native";
 import gradient from "../assets/gradientv2.png";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import { faUser, faLock, faEye } from "@fortawesome/free-solid-svg-icons";
+import {
+  faUser,
+  faLock,
+  faEye,
+  faEyeSlash,
+} from "@fortawesome/free-solid-svg-icons";
 import logo from "../assets/logo_skaphandrus.png";
 
 const ScreenLogin = ({ navigation }) => {
@@ -20,6 +25,7 @@ const ScreenLogin = ({ navigation }) => {
     passwordConfirmation: "",
     passwordsecureTextEntry: true,
     passwordConfirmationsecureTextEntry: true,
+    passwordIcon: true,
   });
 
   const handlePasswordChange = (val) => {
@@ -28,12 +34,14 @@ const ScreenLogin = ({ navigation }) => {
         ...data,
         password: val,
         passwordsecureTextEntry: false,
+        passwordIcon: false,
       });
     } else {
       setData({
         ...data,
         password: val,
         passwordsecureTextEntry: true,
+        passwordIcon: true,
       });
     }
   };
@@ -68,7 +76,10 @@ const ScreenLogin = ({ navigation }) => {
             secureTextEntry={data.passwordsecureTextEntry}
           />
           <TouchableOpacity onPress={handlePasswordChange}>
-            <FontAwesomeIcon icon={faEye} color="white" />
+            <FontAwesomeIcon
+              icon={data.passwordIcon == true ? faEye : faEyeSlash}
+              color="white"
+            />
           </TouchableOpacity>
         </View>
 
@@ -98,8 +109,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     //backgroundColor:'#1af394',
-    alignItems: "center",
-    justifyContent: "center",
   },
   image: {
     flex: 1,
@@ -111,12 +120,12 @@ const styles = StyleSheet.create({
     padding: 20,
     fontSize: 50,
     color: "#fff",
-    position: "absolute",
-    top: 10,
+    top: -30,
     //fontWeight:'bold',
   },
   logo: {
     //backgroundColor:'black',
+    marginTop: 50,
     width: 200,
     height: 220,
     alignItems: "flex-start",

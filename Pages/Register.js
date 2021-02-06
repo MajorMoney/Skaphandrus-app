@@ -11,7 +11,13 @@ import {
 import gradient from "../assets/gradientv2.png";
 import logo from "../assets/logo_skaphandrus.png";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import { faUser, faLock, faEye, faAt } from "@fortawesome/free-solid-svg-icons";
+import {
+  faUser,
+  faLock,
+  faEye,
+  faAt,
+  faEyeSlash,
+} from "@fortawesome/free-solid-svg-icons";
 
 const ScreenRegister = ({ navigation }) => {
   const [data, setData] = React.useState({
@@ -20,6 +26,8 @@ const ScreenRegister = ({ navigation }) => {
     passwordConfirmation: "",
     passwordsecureTextEntry: true,
     passwordConfirmationsecureTextEntry: true,
+    passwordIcon: true,
+    passwordIconConfirmation: true,
   });
 
   const handlePasswordChange = (val) => {
@@ -28,12 +36,14 @@ const ScreenRegister = ({ navigation }) => {
         ...data,
         password: val,
         passwordsecureTextEntry: false,
+        passwordIcon: false,
       });
     } else {
       setData({
         ...data,
         password: val,
         passwordsecureTextEntry: true,
+        passwordIcon: true,
       });
     }
   };
@@ -44,12 +54,14 @@ const ScreenRegister = ({ navigation }) => {
         ...data,
         password: val,
         passwordConfirmationsecureTextEntry: false,
+        passwordIconConfirmation: false,
       });
     } else {
       setData({
         ...data,
         password: val,
         passwordConfirmationsecureTextEntry: true,
+        passwordIconConfirmation: true,
       });
     }
   };
@@ -83,7 +95,10 @@ const ScreenRegister = ({ navigation }) => {
             secureTextEntry={data.passwordsecureTextEntry}
           />
           <TouchableOpacity onPress={handlePasswordChange}>
-            <FontAwesomeIcon icon={faEye} color="white" />
+            <FontAwesomeIcon
+              icon={data.passwordIcon == true ? faEye : faEyeSlash}
+              color="white"
+            />
           </TouchableOpacity>
         </View>
 
@@ -98,7 +113,10 @@ const ScreenRegister = ({ navigation }) => {
             secureTextEntry={data.passwordConfirmationsecureTextEntry}
           />
           <TouchableOpacity onPress={handleConfirmationPasswordChange}>
-            <FontAwesomeIcon icon={faEye} color="white" />
+            <FontAwesomeIcon
+              icon={data.passwordIconConfirmation == true ? faEye : faEyeSlash}
+              color="white"
+            />
           </TouchableOpacity>
         </View>
 
@@ -143,8 +161,7 @@ const styles = StyleSheet.create({
     padding: 20,
     fontSize: 50,
     color: "#fff",
-    position: "absolute",
-    top: 10,
+    top: -30,
     //fontWeight:'bold',
   },
   logo: {
