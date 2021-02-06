@@ -139,6 +139,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 2,
     width: "100%",
     padding: 10,
+    marginLeft: 10,
     textShadowColor: "#fff",
   },
   btnContainer: {
