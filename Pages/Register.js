@@ -10,6 +10,8 @@ import {
 } from "react-native";
 import gradient from "../assets/gradientv2.png";
 import logo from "../assets/logo_skaphandrus.png";
+import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
+import { faUser, faLock, faEye, faAt } from "@fortawesome/free-solid-svg-icons";
 
 const ScreenRegister = ({ navigation }) => {
   const [data, setData] = React.useState({
@@ -60,7 +62,9 @@ const ScreenRegister = ({ navigation }) => {
         <Image style={styles.logo} source={logo} />
 
         <View style={styles.logContainer}>
-          <View style={styles.iconContainer}></View>
+          <View style={styles.iconContainer}>
+            <FontAwesomeIcon icon={faUser} color="white" />
+          </View>
           <TextInput
             placeholder="Username"
             placeholderTextColor="#fff"
@@ -69,31 +73,39 @@ const ScreenRegister = ({ navigation }) => {
         </View>
 
         <View style={styles.logContainer}>
-          <View style={styles.iconContainer}></View>
+          <View style={styles.iconContainer}>
+            <FontAwesomeIcon icon={faLock} color="white" />
+          </View>
           <TextInput
             placeholder="Password"
             placeholderTextColor="#fff"
             style={styles.input}
             secureTextEntry={data.passwordsecureTextEntry}
           />
-          <TouchableOpacity onPress={handlePasswordChange}></TouchableOpacity>
+          <TouchableOpacity onPress={handlePasswordChange}>
+            <FontAwesomeIcon icon={faEye} color="white" />
+          </TouchableOpacity>
         </View>
 
         <View style={styles.logContainer}>
-          <View style={styles.iconContainer}></View>
+          <View style={styles.iconContainer}>
+            <FontAwesomeIcon icon={faLock} color="white" />
+          </View>
           <TextInput
             placeholder="Confirm Password"
             placeholderTextColor="#fff"
             style={styles.input}
             secureTextEntry={data.passwordConfirmationsecureTextEntry}
           />
-          <TouchableOpacity
-            onPress={handleConfirmationPasswordChange}
-          ></TouchableOpacity>
+          <TouchableOpacity onPress={handleConfirmationPasswordChange}>
+            <FontAwesomeIcon icon={faEye} color="white" />
+          </TouchableOpacity>
         </View>
 
         <View style={styles.logContainer}>
-          <View style={styles.iconContainer}></View>
+          <View style={styles.iconContainer}>
+            <FontAwesomeIcon icon={faAt} color="white" />
+          </View>
           <TextInput
             placeholder="Email"
             placeholderTextColor="#fff"
