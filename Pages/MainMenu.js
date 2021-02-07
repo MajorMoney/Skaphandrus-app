@@ -25,7 +25,7 @@ const MainMenu = ({ navigation }) => {
         <TouchableOpacity
           style={styles.btn}
           placeholderTextColor="#fff"
-          onPress={() => console.log("Profile")}
+          onPress={() => navigation.navigate("ProfileScreen")}
         >
           <FontAwesomeIcon icon={faUser} color="white" size={50} />
           <Text style={styles.btnText}>Profile</Text>

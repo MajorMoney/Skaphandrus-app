@@ -1,15 +1,5 @@
 import React from "react";
-import MapView from "react-native-maps";
-import {
-  StyleSheet,
-  Text,
-  View,
-  TextInput,
-  TouchableOpacity,
-  ImageBackground,
-  Image,
-  Dimensions,
-} from "react-native";
+import { StyleSheet, View } from "react-native";
 import Map from "../components/Map";
 
 //const height = Dimensions.get("window").height;

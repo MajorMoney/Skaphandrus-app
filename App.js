@@ -6,6 +6,7 @@ import ScreenLogin from "./Pages/Login";
 import ScreenRegister from "./Pages/Register";
 import ScreenMainMenu from "./Pages/MainMenu";
 import MapScreen from "./Pages/MapScreen";
+import ProfileScreen from "./Pages/Profile";
 
 const Drawer = createDrawerNavigator();
 
@@ -18,6 +19,7 @@ export default class App extends React.Component {
           <Drawer.Screen name="Register" component={ScreenRegister} />
           <Drawer.Screen name="MainMenu" component={ScreenMainMenu} />
           <Drawer.Screen name="MapScreen" component={MapScreen} />
+          <Drawer.Screen name="ProfileScreen" component={ProfileScreen} />
         </Drawer.Navigator>
       </NavigationContainer>
     );
