@@ -55,7 +55,7 @@ const MainMenu = ({ navigation }) => {
           onPress={() => navigation.navigate("Login")}
         >
           <FontAwesomeIcon icon={faCog} color="white" size={50} />
-          <Text style={styles.btnText}>Setings</Text>
+          <Text style={styles.btnText}>Settings</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
