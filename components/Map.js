@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import MapView from "react-native-maps";
+import MapView, { Marker } from "react-native-maps";
+import Boat from "../assets/boat.png";
 import {
   StyleSheet,
   Text,
@@ -16,49 +17,87 @@ import * as Location from "expo-location";
 //const height = Dimensions.get("window").height;
 
 class Map extends Component {
+  state = {
+    region: null,
+    errorMessage: "",
+  };
   constructor(props) {
     super(props);
     this.getLocation();
   }
 
-  state = {
-    latitude: 0,
-    longitude: 0,
-    errorMessage: "",
-  };
+  async componentDidMount() {
+    //this.getLocation();
+  }
+
   /**/
-  getLocation = async () => {
+
+  /* getStatus = async () => {
+    this.setState({
+      currentStatus: await Permissions.getAsync(Permissions.LOCATION),
+    });
+  };
+
+  /*askPermission = async () => {
     try {
-      const { status } = await Permissions.askAsync(Permissions.LOCATION);
+      if (this.state.currentStatus !== "granted") {
+        const { status } = await Permissions.askAsync(Permissions.LOCATION);
 
-      console.log(status);
-      if (status !== "granted") {
-        this.setState({
-          errorMessage: "Permission to acess location was denied",
-        });
+        if (status === "granted") {
+        } else {
+          this.setState({
+            errorMessage: "Location permission not granted",
+          });
+          throw new Error();
+        }
       }
-      const location = await Location.getCurrentPositionAsync();
-      const latitude = location.coords.latitude;
-      const longitude = location.coords.longitude;
+    } catch (error) {
+      this.props.navigation.goBack();
+      alert(this.state.errorMessage);
+    }
+  };*/
 
-      console.log(location);
-
-      this.setState({ longitude, latitude });
-    } catch (error) {}
+  getLocation = async () => {
+    //if (status === "granted") {
+    const location = await Location.getCurrentPositionAsync();
+    this.setState({
+      region: {
+        latitude: location.coords.latitude,
+        longitude: location.coords.longitude,
+        latitudeDelta: 0.001,
+        longitudeDelta: 0.002,
+      },
+    });
+    //}
   };
 
   render() {
+    console.log(this.state.region);
+    const { region, latitude, longitude } = this.state;
+    console.log(this.state.region);
+    //const { latitude, longitude } = region;
+    //console.log(latitude);
+    //console.log(longitude);
     return (
-      <MapView
-        style={styles.map}
-        provider="google"
-        region={{
-          latitude: this.state.latitude,
-          longitude: this.state.longitude,
-          latitudeDelta: 0.001,
-          longitudeDelta: 0.002,
-        }}
-      ></MapView>
+      <View>
+        <MapView
+          style={styles.map}
+          provider="google"
+          //showsUserLocation={true}
+          followsUserLocation={true}
+          region={region}
+        >
+          <Marker
+            title="User"
+            description="descrição á toa"
+            coordinate={{
+              latitude: 38.5817508,
+              longitude: -8.9016856,
+            }}
+            image={Boat}
+          />
+        </MapView>
+      </View>
     );
   }
 }
