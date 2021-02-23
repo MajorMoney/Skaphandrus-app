@@ -7,7 +7,7 @@ import Map from "../components/Map";
 const MapScreen = ({ navigation }) => {
   return (
     <View>
-      <Map></Map>
+      <Map navigation={navigation}></Map>
     </View>
   );
 };
