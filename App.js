@@ -2,7 +2,7 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 
-import ScreenLogin from "./screens/Login";
+import ScreenLogin from "./screens/Login/Login";
 import ScreenRegister from "./screens/Register";
 import ScreenMainMenu from "./screens/MainMenu";
 import MapScreen from "./screens/MapScreen";

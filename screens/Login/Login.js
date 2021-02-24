@@ -8,7 +8,7 @@ import {
   ImageBackground,
   Image,
 } from "react-native";
-import gradient from "../assets/gradientv2.png";
+import gradient from "../../assets/gradientv2.png";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import {
   faUser,
@@ -16,7 +16,8 @@ import {
   faEye,
   faEyeSlash,
 } from "@fortawesome/free-solid-svg-icons";
-import logo from "../assets/logo_skaphandrus.png";
+import logo from "../../assets/logo_skaphandrus.png";
+import LogButton from "../../components/Log/LogButton";
 
 const ScreenLogin = ({ navigation }) => {
   const [data, setData] = React.useState({
@@ -47,6 +48,7 @@ const ScreenLogin = ({ navigation }) => {
   };
 
   console.log(navigation);
+  const texto = "register";
   return (
     <View style={styles.container}>
       <ImageBackground source={gradient} style={styles.image}>
@@ -84,21 +86,10 @@ const ScreenLogin = ({ navigation }) => {
         </View>
 
         <View style={styles.btnContainer}>
-          <TouchableOpacity
-            style={styles.btn}
-            onPress={() => navigation.navigate("MainMenu")}
-          >
-            <Text style={styles.btnText}>Login</Text>
-          </TouchableOpacity>
-
+          <LogButton texto="Login" nav="MainMenu" navigation={navigation} />
           <Text>Forgot your password?</Text>
 
-          <TouchableOpacity
-            style={styles.btn}
-            onPress={() => navigation.navigate("Register")}
-          >
-            <Text style={styles.btnText}>Register</Text>
-          </TouchableOpacity>
+          <LogButton texto="Register" nav="Register" navigation={navigation} />
         </View>
       </ImageBackground>
     </View>

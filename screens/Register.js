@@ -18,6 +18,7 @@ import {
   faAt,
   faEyeSlash,
 } from "@fortawesome/free-solid-svg-icons";
+import LogButton from "../components/Log/LogButton";
 
 const ScreenRegister = ({ navigation }) => {
   const [data, setData] = React.useState({
@@ -132,12 +133,7 @@ const ScreenRegister = ({ navigation }) => {
         </View>
 
         <View style={styles.btnContainer}>
-          <TouchableOpacity
-            style={styles.btn}
-            onPress={() => navigation.navigate("Login")}
-          >
-            <Text style={styles.btnText}>Register</Text>
-          </TouchableOpacity>
+          <LogButton texto="Register" nav="Login" navigation={navigation} />
         </View>
       </ImageBackground>
     </View>
