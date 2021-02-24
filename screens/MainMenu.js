@@ -52,7 +52,7 @@ const MainMenu = ({ navigation }) => {
         <TouchableOpacity
           style={styles.btn}
           placeholderTextColor="#fff"
-          onPress={() => navigation.navigate("Login")}
+          onPress={() => console.log("Settings")}
         >
           <FontAwesomeIcon icon={faCog} color="white" size={50} />
           <Text style={styles.btnText}>Settings</Text>
