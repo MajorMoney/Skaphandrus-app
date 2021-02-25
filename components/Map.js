@@ -3,6 +3,9 @@ import MapView, { Marker, Callout } from "react-native-maps";
 import { Svg, Image as ImageSvg } from "react-native-svg";
 import Icon from "../assets/Patinhas.svg";
 import Boat from "../assets/boat.png";
+import { markers } from "../dummyData";
+import CostumCallout from "../components/Map/CostumCallout";
+import CallOutArrow from "../components/Map/CallOutArrow";
 import {
   StyleSheet,
   Text,
@@ -24,15 +27,14 @@ class Map extends Component {
     latitude: 0,
     longitude: 0,
     errorMessage: "",
+    markers: markers,
   };
   constructor(props) {
     super(props);
     this.getLocation();
   }
 
-  async componentDidMount() {
-    //this.getLocation();
-  }
+  async componentDidMount() {}
 
   /**/
 
@@ -65,22 +67,41 @@ class Map extends Component {
     this.props.navigation.navigate("Login");
   }
 
+  renderMarkers = () => {
+    this.state.markers.map((item) => (
+      <CostumCallout
+        title={item.title}
+        description={item.description}
+        coordinate={item.coordinate}
+        image={item.image}
+      ></CostumCallout>
+    ));
+  };
+
   getLocation = async () => {
-    //if (status === "granted") {
     const location = await Location.getCurrentPositionAsync();
     this.setState({
       latitude: location.coords.latitude,
       longitude: location.coords.longitude,
     });
-    //}
   };
 
   render() {
-    console.log("\n\nNOVO RUN\n\n");
-
+    const RederedMarkers = this.state.markers.map((item) => (
+      <View key={item.key}>
+        <Marker coordinate={item.coordinate}>
+          <Callout tooltip>
+            <CostumCallout
+              title={item.title}
+              description={item.description}
+              image={item.image}
+            ></CostumCallout>
+            <CallOutArrow />
+          </Callout>
+        </Marker>
+      </View>
+    ));
     const { latitude, longitude } = this.state;
-    console.log(latitude);
-    console.log(longitude);
     return (
       <View>
         <MapView
@@ -95,9 +116,8 @@ class Map extends Component {
             longitudeDelta: 0.002,
           }}
         >
+          {RederedMarkers}
           <Marker
-            // title="User"
-            //description="descrição á toa"
             coordinate={{ latitude: latitude, longitude: longitude }}
             anchor={{ x: 0.5, y: 0.5 }}
             image={Boat}
