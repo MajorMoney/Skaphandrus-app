@@ -3,7 +3,6 @@ import {
   StyleSheet,
   Text,
   View,
-  TextInput,
   TouchableOpacity,
   ImageBackground,
   Image,
@@ -18,6 +17,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import logo from "../../assets/logo_skaphandrus.png";
 import LogButton from "../../components/Log/LogButton";
+import Loginouts from "../../components/Log/LogInputs";
 
 const ScreenLogin = ({ navigation }) => {
   const [data, setData] = React.useState({
@@ -48,35 +48,23 @@ const ScreenLogin = ({ navigation }) => {
   };
 
   console.log(navigation);
-  const texto = "register";
   return (
     <View style={styles.container}>
       <ImageBackground source={gradient} style={styles.image}>
         <Text style={styles.title}>Skaphandrus</Text>
-
         <Image style={styles.logo} source={logo} />
-
         <View style={styles.logContainer}>
           <View style={styles.iconContainer}>
             <FontAwesomeIcon icon={faUser} color="white" />
           </View>
-          <TextInput
-            placeholder=" Username"
-            placeholderTextColor="#fff"
-            style={styles.input}
-          />
+          <Loginouts texto=" Username" />
         </View>
 
         <View style={styles.logContainer}>
           <View style={styles.iconContainer}>
             <FontAwesomeIcon icon={faLock} color="white" />
           </View>
-          <TextInput
-            placeholder="  Password"
-            placeholderTextColor="#fff"
-            style={styles.input}
-            secureTextEntry={data.passwordsecureTextEntry}
-          />
+          <Loginouts texto="  Password" flag={data.passwordsecureTextEntry} />
           <TouchableOpacity onPress={handlePasswordChange}>
             <FontAwesomeIcon
               icon={data.passwordIcon == true ? faEye : faEyeSlash}
@@ -88,7 +76,6 @@ const ScreenLogin = ({ navigation }) => {
         <View style={styles.btnContainer}>
           <LogButton texto="Login" nav="MainMenu" navigation={navigation} />
           <Text>Forgot your password?</Text>
-
           <LogButton texto="Register" nav="Register" navigation={navigation} />
         </View>
       </ImageBackground>

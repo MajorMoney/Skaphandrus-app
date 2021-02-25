@@ -3,7 +3,6 @@ import {
   StyleSheet,
   Text,
   View,
-  TextInput,
   TouchableOpacity,
   ImageBackground,
   Image,
@@ -19,6 +18,7 @@ import {
   faEyeSlash,
 } from "@fortawesome/free-solid-svg-icons";
 import LogButton from "../components/Log/LogButton";
+import LogInputs from "../components/Log/LogInputs";
 
 const ScreenRegister = ({ navigation }) => {
   const [data, setData] = React.useState({
@@ -78,23 +78,14 @@ const ScreenRegister = ({ navigation }) => {
           <View style={styles.iconContainer}>
             <FontAwesomeIcon icon={faUser} color="white" />
           </View>
-          <TextInput
-            placeholder=" Username"
-            placeholderTextColor="#fff"
-            style={styles.input}
-          />
+          <LogInputs texto=" Username" />
         </View>
 
         <View style={styles.logContainer}>
           <View style={styles.iconContainer}>
             <FontAwesomeIcon icon={faLock} color="white" />
           </View>
-          <TextInput
-            placeholder="  Password"
-            placeholderTextColor="#fff"
-            style={styles.input}
-            secureTextEntry={data.passwordsecureTextEntry}
-          />
+          <LogInputs texto="  Password" flag={data.passwordsecureTextEntry} />
           <TouchableOpacity onPress={handlePasswordChange}>
             <FontAwesomeIcon
               icon={data.passwordIcon == true ? faEye : faEyeSlash}
@@ -107,11 +98,9 @@ const ScreenRegister = ({ navigation }) => {
           <View style={styles.iconContainer}>
             <FontAwesomeIcon icon={faLock} color="white" />
           </View>
-          <TextInput
-            placeholder="  Confirm Password"
-            placeholderTextColor="#fff"
-            style={styles.input}
-            secureTextEntry={data.passwordConfirmationsecureTextEntry}
+          <LogInputs
+            texto="  Confirm Password"
+            flag={data.passwordConfirmationsecureTextEntry}
           />
           <TouchableOpacity onPress={handleConfirmationPasswordChange}>
             <FontAwesomeIcon
@@ -125,11 +114,7 @@ const ScreenRegister = ({ navigation }) => {
           <View style={styles.iconContainer}>
             <FontAwesomeIcon icon={faAt} color="white" />
           </View>
-          <TextInput
-            placeholder="  Email"
-            placeholderTextColor="#fff"
-            style={styles.input}
-          />
+          <LogInputs texto="  Email" />
         </View>
 
         <View style={styles.btnContainer}>
