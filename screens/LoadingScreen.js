@@ -35,7 +35,7 @@ const LoadingScreen = ({ navigation }) => {
     setTimeout(() => {
       navigation.navigate("Login");
     }, 5000);
-  });
+  }, []);
 
   return (
     <View style={styles.container}>
