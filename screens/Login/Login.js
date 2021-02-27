@@ -17,7 +17,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import logo from "../../assets/logo_skaphandrus.png";
 import LogButton from "../../components/Log/LogButton";
-import Loginouts from "../../components/Log/LogInputs";
+import LogInputs from "../../components/Log/LogInputs";
 
 const ScreenLogin = ({ navigation }) => {
   const [data, setData] = React.useState({
@@ -57,14 +57,14 @@ const ScreenLogin = ({ navigation }) => {
           <View style={styles.iconContainer}>
             <FontAwesomeIcon icon={faUser} color="white" />
           </View>
-          <Loginouts texto=" Username" />
+          <LogInputs texto=" Username" />
         </View>
 
         <View style={styles.logContainer}>
           <View style={styles.iconContainer}>
             <FontAwesomeIcon icon={faLock} color="white" />
           </View>
-          <Loginouts texto="  Password" flag={data.passwordsecureTextEntry} />
+          <LogInputs texto="  Password" flag={data.passwordsecureTextEntry} />
           <TouchableOpacity onPress={handlePasswordChange}>
             <FontAwesomeIcon
               icon={data.passwordIcon == true ? faEye : faEyeSlash}
